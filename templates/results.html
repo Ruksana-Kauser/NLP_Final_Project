@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="container">
+
+
+
+<p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#table" role="button" aria-expanded="false" aria-controls="table">
+      Table
+    </a>
+
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#chart_pie" role="button" aria-expanded="false" aria-controls="chart_pie">
+        Charts
+      </a>
+   
+  </p>
+  <div class="collapse" id="table">
+    <div class="card card-body">
+      <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                
+                <th scope="col">Slno</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Title</th>
+                <th scope="col">Review </th>
+                <th scope="col"> </th>
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for n in a %}
+                <tr>
+                  <th scope="row">{{loop.index}}</th>
+                  <td>{{n["Rating"]}}</td>
+                  <td>{{n["Title"]}}</td>
+                  <td>{{n["Content"]}}</td>
+                  
+                  <td></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapse" id="chart_pie">
+    <div class="card card-body">
+        <div class="container">
+            <section class="py-5">
+                <div class="container px-4 px-lg-5 my-5">
+                    <div class="row gx-4 gx-lg-5 align-items-center">
+                        <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/static/rate.png" alt="..." /></div>
+                        <div class="col-md-6">
+                           
+                            <h1 class="display-5 fw-bolder">Ratings Chart</h1>
+                           
+                            <p class="lead">This is a bar chart providing the rating values for user reference.</p>
+
+                        </div>
+                        <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/static/sad.png" alt="..." /></div>
+                        <div class="col-md-6">
+                           
+                            <h1 class="display-5 fw-bolder">Sad Chart</h1>
+                           
+                            <p class="lead">This chart will show us the negative words used for reviews.</p>
+
+                        </div>
+                        <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/static/pie.png" alt="..." /></div>
+                        <div class="col-md-6">
+                           
+                            <h1 class="display-5 fw-bolder">Pie Chart</h1>
+                           
+                            <p class="lead">This Pie chart tells us with the percentage of good and bad reviews and makes user to decide for buying the product.</p>
+
+                        </div>
+                        <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/static/hapy.png" alt="..." /></div>
+                        <div class="col-md-6">
+                           
+                            <h1 class="display-5 fw-bolder">Happy Chart</h1>
+                           
+                            <p class="lead">This chart will show us the positive words used for reviews.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock body %}
+
+
+
+

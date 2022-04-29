@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+
+<div class="container">
+    <form action = "/result" , method="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><h3>Enter the Product Url</h3></label>
+          <input type="text" class="form-control" name= "link" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
+       
+        <button type="submit" onclick="displayDate()" id="search" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+
+<div class="container">
+  <center>
+  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" id = "load" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</center>
+</div>
+
+
+
+<script src="static/custom/custom.js"></script>
+
+
+{% endblock body %}
