@@ -1,4 +1,3 @@
-from __future__ import print_function # In python 2.7
 from flask import Flask, render_template , request
 from reviews import find_amazon_data_ruku,ruku_likn_de
 import sys
